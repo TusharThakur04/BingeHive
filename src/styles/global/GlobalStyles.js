@@ -77,6 +77,12 @@ export const GlobalStyles = createGlobalStyle`
         transition: ${theme.allEaseInOut};
         outline: 0;
     }
+    
+
+    .to-home{
+        font-family: Permanent Marker 
+
+    }
 
     /* ### utility classes ### */
     /* flexbox and grid */

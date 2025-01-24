@@ -15,11 +15,16 @@ const Header = () => {
     <HeaderWrapper className={`flex items-center`}>
       <Container className="w-full">
         <div className="header-content flex items-centre justify-between">
-          <BrandWrapper to={routeConstants.HOME}></BrandWrapper>
-          <NavWrapper>
-            <button>
-              <img src="" alt="hi" />
+          <BrandWrapper to={routeConstants.HOME}>
+            <h1 className="to-home">BingeHive</h1>
+          </BrandWrapper>
+          <NavWrapper className={`flex items-center justify-center`}>
+            <button type="button" className="sidebar-close-btn">
+              <img src={Icons.CloseSB} alt="close" />
             </button>
+            <ul>
+              <li></li>
+            </ul>
           </NavWrapper>
         </div>
       </Container>
