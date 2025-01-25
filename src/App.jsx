@@ -5,6 +5,7 @@ import routeConstants from "./constants/routeConstants";
 import { Layout } from "./components";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/global/GlobalStyles";
+import { PageNotFound } from "./screens";
 
 const route = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const route = createBrowserRouter([
         element: <Search />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
   },
 ]);
 
