@@ -84,7 +84,16 @@ export const NavWrapper = styled.nav`
   }
 
   .nav-items {
+    height: 55px;
+    min-width: 110px;
+    &.active {
+      background-color: ${theme.colors.black10};
+      color: ${theme.colors.white};
+      border-radius: 10px;
+    }
+
     ${media.lg`
+        height:100%;
         width: 100%;
         display: flex;
         align-items: center;
@@ -94,35 +103,17 @@ export const NavWrapper = styled.nav`
         &:last-child{
             border-bottom: 0;
         }
-    `}
+    `};
   }
 
   .nav-Link {
-    height: 55px;
-    min-width: 100px;
-    padding: 14px;
     border-radius: 8px;
     color: ${theme.colors.gray75};
     font-weight: 600;
-  }
 
-  ${media.lg`
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 260px;
-    background: ${theme.colors.black10};
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 29px 0px;
-    align-items: flex-start;
-    border-radius: 0;
-    padding: 32px 12px;
-    transform: translateX(100%);
-    z-index: 1000;
-
-    &.show{
-        transform: translateX(0);
+    &:hover {
+      color: ${theme.colors.primary};
     }
-  `}
+  }
 `;
 export const HeaderIconWrapper = styled.div``;

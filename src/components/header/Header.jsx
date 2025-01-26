@@ -10,8 +10,10 @@ import { Container } from "../../styles/global/default";
 import { Images } from "../../assets/images";
 import { Icons } from "../../assets/icons";
 import routeConstants from "../../constants/routeConstants";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
   return (
     <HeaderWrapper className={`flex items-center`}>
       <Container className="w-full">
@@ -24,7 +26,9 @@ const Header = () => {
               <img src={Icons.CloseSB} alt="close" />
             </button>
             <ul className="nav-list flex items-center justify-center bg-black06">
-              <li className="nav-items">
+              <li
+                className={` nav-items flex justify-center ${location.pathname === routeConstants.HOME ? "active" : ""}`}
+              >
                 <Link
                   to={routeConstants.HOME}
                   className={`nav-Link 
@@ -33,7 +37,9 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className="nav-items">
+              <li
+                className={` nav-items flex justify-center ${location.pathname === routeConstants.SHOWS ? "active" : ""}`}
+              >
                 <Link
                   to={routeConstants.SHOWS}
                   className={`nav-Link 
@@ -42,7 +48,9 @@ const Header = () => {
                   Shows
                 </Link>
               </li>
-              <li className="nav-items">
+              <li
+                className={` nav-items flex justify-center ${location.pathname === "/support" ? "active" : ""}`}
+              >
                 <Link
                   to="/support"
                   className={`nav-Link 
@@ -51,7 +59,9 @@ const Header = () => {
                   Support
                 </Link>
               </li>
-              <li className="nav-items">
+              <li
+                className={` nav-items flex justify-center ${location.pathname === "/subscription" ? "active" : ""}`}
+              >
                 <Link
                   to="/subscription"
                   className={`nav-Link 
