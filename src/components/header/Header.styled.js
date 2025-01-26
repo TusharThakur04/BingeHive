@@ -61,6 +61,11 @@ export const NavWrapper = styled.nav`
       opacity: 0.8;
       scale: 0.95;
     }
+
+    ${media.lg`
+      position: absolute;
+      right:12px;
+      `}
   }
 
   ${media.lg`
@@ -115,5 +120,56 @@ export const NavWrapper = styled.nav`
       color: ${theme.colors.primary};
     }
   }
+
+  ${media.lg`
+    position:fixed;
+    right:0;
+    top:0;
+    height:50%;
+    width:200px;
+    background: ${theme.colors.black10};
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 7px 29px 0px;
+    border-radius: 0;
+    transform: translateX(100%);
+    z-index: 1000;
+
+    &.show{
+        transform: translateX(0);
+      }
+    `}
 `;
-export const HeaderIconWrapper = styled.div``;
+export const HeaderIconWrapper = styled.div`
+  column-gap: 16px;
+
+  .icon-link {
+    min-width: 40px;
+    width: 40px;
+    height: 35px;
+    padding: 4px;
+    background: transparent;
+
+    ${media.lg`
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      `}
+
+      img {
+      width: 100%;
+    }
+
+    &:hover {
+      opacity: 0.7;
+      }
+
+
+    &.sidebar-open-btn {
+      display: none;
+
+    ${media.lg`
+       display: inline-flex;
+      `}
+    }
+
+    
+`;
