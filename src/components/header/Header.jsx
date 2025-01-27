@@ -11,11 +11,15 @@ import { Images } from "../../assets/images";
 import { Icons } from "../../assets/icons";
 import routeConstants from "../../constants/routeConstants";
 import { useLocation } from "react-router-dom";
+import useHeaderBackground from "../../hooks/hasBackground";
 
 const Header = () => {
   const location = useLocation();
+  const hasBackground = useHeaderBackground();
   return (
-    <HeaderWrapper className={`flex items-center`}>
+    <HeaderWrapper
+      className={`flex items-center ${hasBackground ? "sm-header" : ""}`}
+    >
       <Container className="w-full">
         <div className="header-content flex items-centre justify-between">
           <BrandWrapper to={routeConstants.HOME}>

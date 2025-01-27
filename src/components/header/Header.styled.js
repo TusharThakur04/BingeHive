@@ -22,19 +22,8 @@ export const HeaderWrapper = styled.header`
     height: auto !important;
     padding-top: 12px;
     padding-bottom: 12px;
-    box-shadow: ${theme.shadows.medium};
+    box-shadow: ${theme.shadows.large};
     border-bottom: 2px solid ${theme.colors.black10};
-
-    .nav-list {
-      padding: 0;
-      height: auto;
-    }
-
-    .nav-link {
-      &.active {
-        border-radius: 0;
-      }
-    }
   }
 `;
 export const BrandWrapper = styled(Link)`
@@ -162,7 +151,6 @@ export const HeaderIconWrapper = styled.div`
       opacity: 0.7;
       }
 
-
     &.sidebar-open-btn {
       display: none;
 
@@ -170,6 +158,5 @@ export const HeaderIconWrapper = styled.div`
        display: inline-flex;
       `}
     }
-
     
 `;
