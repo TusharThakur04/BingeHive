@@ -12,10 +12,16 @@ import { Icons } from "../../assets/icons";
 import routeConstants from "../../constants/routeConstants";
 import { useLocation } from "react-router-dom";
 import useHeaderBackground from "../../hooks/hasBackground";
+import { useSelector, useDispatch } from "react-redux";
+import { showSidebar, closeSidebar } from "../../redux/slices/sidebarSlice";
 
 const Header = () => {
   const location = useLocation();
   const hasBackground = useHeaderBackground();
+  const dispatch = useDispatch();
+  const sidebarState = useSelector((state) => state.sidebar.value);
+  console.log(sidebarState);
+
   return (
     <HeaderWrapper
       className={`flex items-center ${hasBackground ? "sm-header" : ""}`}
@@ -25,8 +31,16 @@ const Header = () => {
           <BrandWrapper to={routeConstants.HOME}>
             <h1 className="to-home">BingeHive</h1>
           </BrandWrapper>
-          <NavWrapper className={`flex items-center justify-center`}>
-            <button type="button" className="sidebar-close-btn">
+          <NavWrapper
+            className={`flex items-center justify-center ${sidebarState ? "show" : ""}`}
+          >
+            <button
+              type="button"
+              onClick={() => {
+                dispatch(closeSidebar());
+              }}
+              className="sidebar-close-btn"
+            >
               <img src={Icons.CloseSB} alt="close" />
             </button>
             <ul className="nav-list flex items-center justify-center bg-black06">
@@ -88,7 +102,10 @@ const Header = () => {
             </Link>
             <button
               type="button"
-              className="icon-link flex items-center justify-center sidebar-open-btn"
+              className="icon-link flex items-center justify-center sidebar-open-btn "
+              onClick={() => {
+                dispatch(showSidebar());
+              }}
             >
               <img src={Icons.Menu} alt="" />
             </button>
