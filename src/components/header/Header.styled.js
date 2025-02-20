@@ -40,6 +40,7 @@ export const NavWrapper = styled.nav`
   transition: ${theme.transitions.allEaseInOut};
 
   .sidebar-close-btn {
+    display: none;
     position: absolute;
     background: transparent;
     right: 4px;
@@ -52,6 +53,7 @@ export const NavWrapper = styled.nav`
     }
 
     ${media.lg`
+      display:block;
       position: absolute;
       right:12px;
       `}

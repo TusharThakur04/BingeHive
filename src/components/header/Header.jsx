@@ -22,6 +22,10 @@ const Header = () => {
   const sidebarState = useSelector((state) => state.sidebar.value);
   console.log(sidebarState);
 
+  const handleNavLinkClick = () => {
+    dispatch(closeSidebar());
+  };
+
   return (
     <HeaderWrapper
       className={`flex items-center ${hasBackground ? "sm-header" : ""}`}
@@ -48,6 +52,7 @@ const Header = () => {
                 className={` nav-items flex justify-center ${location.pathname === routeConstants.HOME ? "active" : ""}`}
               >
                 <Link
+                  onClick={handleNavLinkClick}
                   to={routeConstants.HOME}
                   className={`nav-Link 
                   inline-flex items-center justify-center text-center`}
@@ -59,6 +64,7 @@ const Header = () => {
                 className={` nav-items flex justify-center ${location.pathname === routeConstants.SHOWS ? "active" : ""}`}
               >
                 <Link
+                  onClick={handleNavLinkClick}
                   to={routeConstants.SHOWS}
                   className={`nav-Link 
                   inline-flex items-center justify-center text-center`}
@@ -70,6 +76,7 @@ const Header = () => {
                 className={` nav-items flex justify-center ${location.pathname === "/support" ? "active" : ""}`}
               >
                 <Link
+                  onClick={handleNavLinkClick}
                   to="/support"
                   className={`nav-Link 
                   inline-flex items-center justify-center text-center`}
@@ -81,6 +88,7 @@ const Header = () => {
                 className={` nav-items flex justify-center ${location.pathname === "/subscription" ? "active" : ""}`}
               >
                 <Link
+                  onClick={handleNavLinkClick}
                   to="/subscription"
                   className={`nav-Link 
                   inline-flex items-center justify-center text-center`}
