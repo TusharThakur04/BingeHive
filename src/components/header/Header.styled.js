@@ -19,7 +19,7 @@ export const HeaderWrapper = styled.header`
   `}
 
   &.sm-header {
-    height: auto !important;
+    height: 125px;
     padding-top: 12px;
     padding-bottom: 12px;
     box-shadow: ${theme.shadows.large};
