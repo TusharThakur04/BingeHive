@@ -10,10 +10,10 @@ const persistConfig = {
   storage,
 };
 
-const reducer = combineReducers({
+const Rootreducer = combineReducers({
   sidebar: sidebarReducer,
 });
-const persistedReducer = persistReducer(persistConfig, reducer);
+const persistedReducer = persistReducer(persistConfig, Rootreducer);
 
 export const store = configureStore({
   reducer: persistedReducer,

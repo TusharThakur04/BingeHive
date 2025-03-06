@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "styled-components"],
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true, "tabWidth": 2 }],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".jsx", ".tsx"] }]
+  }
+}

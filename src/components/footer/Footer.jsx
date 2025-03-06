@@ -27,7 +27,6 @@ const Footer = () => {
 };
 
 const FooterItem = ({ data }) => {
-  console.log(data);
   return (
     <FooterItemWrapper>
       <h4 className="item-title text-xl capitalize font-semibold">
