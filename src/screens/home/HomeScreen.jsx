@@ -1,7 +1,12 @@
 import React from "react";
+import { Banner } from "../../components";
 
 const HomeScreen = () => {
-  return <div></div>;
+  return (
+    <div className="pg-home">
+      <Banner />
+    </div>
+  );
 };
 
 export default HomeScreen;

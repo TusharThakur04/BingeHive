@@ -5,7 +5,7 @@ import { media, theme } from "../../styles/theme/theme";
 export const HeaderWrapper = styled.header`
   height: 120px;
   position: fixed;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%;
   z-index: 999;
