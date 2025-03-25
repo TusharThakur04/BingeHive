@@ -20,6 +20,7 @@ export const HeaderWrapper = styled.header`
 
   &.sm-header {
     height: 125px;
+    background-color: ${theme.colors.secondary};
     padding-top: 12px;
     padding-bottom: 12px;
     box-shadow: ${theme.shadows.large};
