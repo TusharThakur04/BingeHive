@@ -26,6 +26,9 @@ export const GlobalStyles = createGlobalStyle`
         list-style: none;
     }
 
+    .slick-dots{
+    color:${theme.colors.secondary}};
+
     img{
         width: 100%;
         display: block;
