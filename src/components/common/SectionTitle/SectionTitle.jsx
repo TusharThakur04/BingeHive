@@ -32,5 +32,5 @@ export default SectionTitle;
 
 SectionTitle.propTypes = {
   title: PropTypes.string,
-  text: PropTypes.sstring,
+  text: PropTypes.string,
 };
