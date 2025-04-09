@@ -20,12 +20,18 @@ export const SliderWrapper = styled.div`
   }
 
   .custom-arrow.next {
-    right: -35px;
+    right: -32px;
   }
 
   .custom-arrow.prev {
-    left: -35px;
+    left: -32px;
   }
 
-  .
+  .slick-dots {
+    li {
+      button::before {
+        color: red;
+      }
+    }
+  }
 `;

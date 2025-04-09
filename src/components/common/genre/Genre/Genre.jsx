@@ -18,7 +18,7 @@ function Genre() {
     autoplaySpeed: 6000,
     speed: 300,
     slidesToShow: 5,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1200,
