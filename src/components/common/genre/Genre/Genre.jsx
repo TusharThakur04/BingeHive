@@ -41,7 +41,7 @@ function Genre() {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
         },
       },
     ],

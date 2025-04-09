@@ -1,10 +1,10 @@
-import NavigateBeforeIcon from "@mui/icons-material/NavigateNext";
+import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import PropTypes from "prop-types";
 
 function CustomBeforeArrow({ onClick }) {
   return (
     <button
-      className="custom-prev-arrow  flex items-center justify-center"
+      className="custom-arrow prev  flex items-center justify-center"
       onClick={onClick}
     >
       <NavigateBeforeIcon color={"white"} />
