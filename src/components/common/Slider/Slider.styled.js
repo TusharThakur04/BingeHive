@@ -4,6 +4,9 @@ import { theme } from "../../../styles/theme/theme";
 export const SliderWrapper = styled.div`
   margin-left: 20px;
   margin-right: 20px;
+  background-color: ${theme.colors.black10};
+  padding: 10px;
+  border-radius: 12px;
 
   .custom-arrow {
     position: absolute;

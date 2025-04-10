@@ -13,4 +13,8 @@ export const GenreItemWrapper = styled.div`
     background-color: ${theme.colors.black06};
     border-radius: 15px;
   }
+
+  .item-body {
+    margin-top: 10px;
+  }
 `;

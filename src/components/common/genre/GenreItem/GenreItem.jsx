@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { GenreItemWrapper } from "./GenreItem.styled";
 import PropTypes from "prop-types";
-import CustomNextArrow from "../../Slider/CustomNextArrow";
+import EastIcon from "@mui/icons-material/East";
 
 function GenreItem({ data }) {
   return (
@@ -10,12 +10,12 @@ function GenreItem({ data }) {
         <div className="item-img">
           <img src={data.thumbnail} alt={data.name} />
         </div>
-        <div className="item-body flex items-center justify-center">
+        <div className="item-body flex items-center justify-between">
           <div className="item-title font-semibold">{data.name}</div>
+          <Link to="/">
+            <EastIcon />
+          </Link>
         </div>
-        <Link to="/">
-          <CustomNextArrow />
-        </Link>
       </div>
     </GenreItemWrapper>
   );
