@@ -13,9 +13,9 @@ function GenreItem({ data }) {
         <div className="item-body flex items-center justify-center">
           <div className="item-title font-semibold">{data.name}</div>
         </div>
-        {/* <Link to="/">
+        <Link to="/">
           <CustomNextArrow />
-        </Link> */}
+        </Link>
       </div>
     </GenreItemWrapper>
   );

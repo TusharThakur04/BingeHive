@@ -9,6 +9,7 @@ export const SliderWrapper = styled.div`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    background-color: ${theme.colors.hover};
     height: 30px;
     width: 30px;
     z-index: 1;
@@ -20,11 +21,11 @@ export const SliderWrapper = styled.div`
   }
 
   .custom-arrow.next {
-    right: -32px;
+    right: -30px;
   }
 
   .custom-arrow.prev {
-    left: -32px;
+    left: -30px;
   }
 
   .slick-dots {
