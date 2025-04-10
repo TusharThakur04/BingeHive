@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { theme } from "../../../styles/theme/theme";
+import { media, theme } from "../../../styles/theme/theme";
 
 export const SliderWrapper = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   background-color: ${theme.colors.black10};
   padding: 10px;
   border-radius: 12px;
@@ -13,8 +13,8 @@ export const SliderWrapper = styled.div`
     top: 50%;
     transform: translateY(-50%);
     background-color: ${theme.colors.hover};
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     z-index: 1;
     transition: transform 0.3s ease;
 
@@ -24,11 +24,11 @@ export const SliderWrapper = styled.div`
   }
 
   .custom-arrow.next {
-    right: -30px;
+    right: -10px;
   }
 
   .custom-arrow.prev {
-    left: -30px;
+    left: -10px;
   }
 
   .slick-dots {

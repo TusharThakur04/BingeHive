@@ -55,19 +55,18 @@ function Genre() {
           "Whether you are looking for a comedy to make tou laugh , a drama to make toy think, or a documentary to learn something new."
         }
       />
-      <Container>
-        <SliderWrapper>
-          <Slider
-            {...settings}
-            nextArrow={<CustomNextArrow />}
-            prevArrow={<CustomBeforeArrow />}
-          >
-            {GENRES?.map((genre) => (
-              <GenreItem data={genre} key={genre.id} />
-            ))}
-          </Slider>
-        </SliderWrapper>
-      </Container>
+
+      <SliderWrapper>
+        <Slider
+          {...settings}
+          nextArrow={<CustomNextArrow />}
+          prevArrow={<CustomBeforeArrow />}
+        >
+          {GENRES?.map((genre) => (
+            <GenreItem data={genre} key={genre.id} />
+          ))}
+        </Slider>
+      </SliderWrapper>
     </GenreWrapper>
   );
 }

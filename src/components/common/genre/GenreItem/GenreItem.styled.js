@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { media, theme } from "../../../../styles/theme/theme";
 
 export const GenreItemWrapper = styled.div`
-  margin: 0 10px;
+  margin: 0 14px;
 
   ${media.lg`
         margin:0 8px;
