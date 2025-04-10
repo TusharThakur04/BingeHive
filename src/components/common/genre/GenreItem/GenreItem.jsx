@@ -12,7 +12,7 @@ function GenreItem({ data }) {
         </div>
         <div className="item-body flex items-center justify-between">
           <div className="item-title font-semibold">{data.name}</div>
-          <Link to="/">
+          <Link to="/shows">
             <EastIcon />
           </Link>
         </div>
