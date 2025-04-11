@@ -3,7 +3,6 @@ import { GenreWrapper } from "./Genere,styled";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Container } from "../../../../styles/global/default";
 import { GENRES } from "../../../../constants/mockData";
 import GenreItem from "../GenreItem/GenreItem";
 import { SliderWrapper } from "../../Slider/Slider.styled";
@@ -15,8 +14,8 @@ function Genre() {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 6000,
-    speed: 300,
+    autoplaySpeed: 900000,
+    speed: 400,
     slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [

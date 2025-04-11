@@ -19,4 +19,8 @@ export const SectionTitleWrapper = styled.div`
     max-width:992px
     margin-right: auto;
   }
+
+  .title-right{
+  
+  }
 `;
