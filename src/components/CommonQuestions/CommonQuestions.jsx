@@ -1,5 +1,6 @@
 import { CommonQuestionsWrapper } from "./CommonQuestions.styled";
 import SectionTitle from "../common/SectionTitle/SectionTitle";
+import FAQs from "./FAQs/FAQs.jsx";
 
 function CommonQuestions() {
   return (
@@ -12,6 +13,7 @@ function CommonQuestions() {
         }
         rightContentType={"title-button"}
       />
+      <FAQs></FAQs>
     </CommonQuestionsWrapper>
   );
 }
