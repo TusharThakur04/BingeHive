@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   BrandWrapper,
@@ -7,7 +6,6 @@ import {
   NavWrapper,
 } from "./Header.styled";
 import { Container } from "../../styles/global/default";
-import { Images } from "../../assets/images";
 import { Icons } from "../../assets/icons";
 import routeConstants from "../../constants/routeConstants";
 import { useLocation } from "react-router-dom";
