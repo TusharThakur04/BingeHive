@@ -2,10 +2,7 @@ import { FAQsItemsWrapper } from "./FAQsItems.styled";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PropTypes from "prop-types";
-import {
-  HeadingTitle,
-  HeadingTitleMd,
-} from "../../../../styles/global/default";
+import { HeadingTitleMd } from "../../../../styles/global/default";
 function FAQsItems({ data, isActive, onShow }) {
   return (
     <FAQsItemsWrapper>

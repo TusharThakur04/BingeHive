@@ -20,7 +20,7 @@ const Header = () => {
   const hasBackground = useHeaderBackground();
   const dispatch = useDispatch();
   const sidebarState = useSelector((state) => state.sidebar.value);
-  console.log(sidebarState);
+  // console.log(sidebarState);
 
   const handleNavLinkClick = () => {
     dispatch(closeSidebar());
