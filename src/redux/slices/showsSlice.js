@@ -29,11 +29,11 @@ const handleError = (error, thunkAPI) => {
   });
 };
 
-const fetchAllShows = createAsyncThunk(
+export const fetchAllShows = createAsyncThunk(
   "fetch/all/shows",
   async (_, thunkAPI) => {
     try {
-      return await showsService.fetchAllShows;
+      return await showsService.fetchAllShows();
     } catch (error) {
       return handleError(error, thunkAPI);
     }

@@ -3,6 +3,8 @@ import urlConstants from "../../constants/urlConstants";
 
 const fetchAllShows = async () => {
   const res = await axios.get(urlConstants.fetchShowsUrl);
+  console.log("hi");
+  console.log(res.data);
   return res.data;
 };
 
