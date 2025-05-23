@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchAllShows } from "../../redux/slices/showsSlice";
+import { ErrorMessage } from "../../components";
 const ShowScreen = () => {
   const dispatch = useDispatch();
 
@@ -30,8 +31,9 @@ const ShowScreen = () => {
         {<ClipLoader color="red" size={80} />}
       </div>
     );
-  } else if (isError) {
-    return <div>{error}</div>;
+  }
+  if (isError) {
+    return <ErrorMessage error={error} />;
   }
 
   return <div>hi</div>;
