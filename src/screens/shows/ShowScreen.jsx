@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchAllShows } from "../../redux/slices/showsSlice";
 import { ErrorMessage } from "../../components";
+import { ShowsList } from "../../components";
 const ShowScreen = () => {
   const dispatch = useDispatch();
 
@@ -36,7 +37,13 @@ const ShowScreen = () => {
     return <ErrorMessage error={error} />;
   }
 
-  return <div>hi</div>;
+  return (
+    <div>
+      {allShowData?.length > 0 && (
+        <ShowsList showsData={allShowData} showsTitle={"All Shows"} />
+      )}
+    </div>
+  );
 };
 
 export default ShowScreen;
