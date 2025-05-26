@@ -3,18 +3,17 @@ import { Link } from "react-router-dom";
 import { theme } from "../../../../styles/theme/theme";
 export const ShowsItemWrapper = styled(Link)`
   padding: 0 10px;
-  margin: 2px 0 2px 0;
   display: block;
+  margin-bottom: 15px;
 
   .item-content {
-    border-radius: 12px;
+    border-radius: 15px;
     border: 1px solid ${theme.colors.black15};
-    border-radius: 12px;
     padding: 16px;
     height: 100%;
+    background-color: ${theme.colors.black12};
 
     .item-img {
-      height: 320px;
       overflow: hidden;
       border-radius: 12px;
     }
