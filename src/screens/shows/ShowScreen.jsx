@@ -13,7 +13,7 @@ const ShowScreen = () => {
     dispatch(fetchAllShows());
   }, [dispatch]);
 
-  const isLoading =  height:200px; useSelector((state) => state.shows.isLoading.fetchAllShows);
+  const isLoading = useSelector((state) => state.shows.isLoading.fetchAllShows);
   const isError = useSelector((state) => state.shows.isError.fetchAllShows);
   const error = useSelector((state) => state.shows.error);
   const allShowData = useSelector((state) => state.shows.shows || []);

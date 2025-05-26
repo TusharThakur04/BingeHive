@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
-import { Link } from "react-router-dom";
-import { media, theme } from "../../styles/theme/theme";
+import { media } from "../../styles/theme/theme";
 
 export const FooterWrapper = styled.footer`
     padding-top: 60px;
@@ -61,4 +60,3 @@ export const FooterWrapper = styled.footer`
 
 `;
 export const FooterItemWrapper = styled.div``;
- 
