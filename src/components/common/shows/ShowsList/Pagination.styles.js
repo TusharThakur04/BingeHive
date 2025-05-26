@@ -7,7 +7,7 @@ export const PaginationWrapper = styled.div`
     // margin-top: 1px;
     width: 50px;
     height: 50px;
-    border: 1px solid grey;
+    border: 1px solid ${theme.colors.gray60};
     text-align: center;
 
     &.current {

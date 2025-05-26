@@ -10,10 +10,12 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 
 const ShowsList = ({ showsData, showsTitle }) => {
-  useEffect(() => {
-    console.log(currentShows);
-  }, []);
   const [currentPage, setcurrentPage] = useState(1);
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [currentPage]);
 
   const showsPerPage = 40;
   const lastIndex = currentPage * showsPerPage;
@@ -43,8 +45,11 @@ const ShowsList = ({ showsData, showsTitle }) => {
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(
               (page, index) => (
                 <div
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
                   onClick={() => setcurrentPage(index + 1)}
                   className={` page flex justify-center items-center ${currentPage === index + 1 && "current"}`}
+                  style={{ cursor: "pointer" }}
                   key={index}
                 >
                   {page}

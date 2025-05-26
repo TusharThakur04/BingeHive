@@ -11,9 +11,9 @@ export const ShowsItemWrapper = styled(Link)`
     border: 1px solid ${theme.colors.black15};
     padding: 16px;
     height: 100%;
-    background-color: ${theme.colors.black12};
 
     .item-img {
+      // height: 300px;
       overflow: hidden;
       border-radius: 12px;
     }
