@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import { fetchAllShows } from "../../redux/slices/showsSlice";
 import { ErrorMessage } from "../../components";
 import { ShowsList } from "../../components";
+import { allShows } from "../../redux/selectors/showsSelector";
+
 const ShowScreen = () => {
   const dispatch = useDispatch();
 
@@ -16,7 +18,8 @@ const ShowScreen = () => {
   const isLoading = useSelector((state) => state.shows.isLoading.fetchAllShows);
   const isError = useSelector((state) => state.shows.isError.fetchAllShows);
   const error = useSelector((state) => state.shows.error);
-  const allShowData = useSelector((state) => state.shows.shows || []);
+
+  const allShowData = useSelector(allShows);
   // console.log(allShowData);
 
   if (isLoading) {
