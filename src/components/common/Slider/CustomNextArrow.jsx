@@ -7,7 +7,7 @@ function CustomNextArrow({ onClick }) {
       className="custom-arrow next flex items-center justify-center"
       onClick={onClick}
     >
-      <NavigateNextIcon color={"white"} />
+      <NavigateNextIcon />
     </button>
   );
 }

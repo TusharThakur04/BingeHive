@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { media } from "../../../styles/theme/theme";
 export const SectionTitleWrapper = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   ${media.lg`
-    margin-bottom:30px;
+    margin-bottom:10px;
     `}
 
   ${media.xs`
-    margin-bottom:20px;
+    margin-bottom:5px;
     `}
 
     .title-grid {

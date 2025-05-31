@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { media, theme } from "../../../styles/theme/theme";
+import { theme } from "../../../styles/theme/theme";
 
 export const SliderWrapper = styled.div`
   margin-left: 10px;
@@ -12,7 +12,8 @@ export const SliderWrapper = styled.div`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: ${theme.colors.hover};
+    background-color: darkGrey;
+    color: white;
     height: 25px;
     width: 25px;
     z-index: 1;

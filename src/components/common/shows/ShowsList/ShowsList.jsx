@@ -16,7 +16,7 @@ const ShowsList = ({ showsData, showsTitle }) => {
     window.scroll(0, 0);
   }, [currentPage]);
 
-  const showsPerPage = 40;
+  const showsPerPage = 36;
   const lastIndex = currentPage * showsPerPage;
   const firstIndex = lastIndex - showsPerPage;
   const currentShows = showsData.slice(firstIndex, lastIndex);
@@ -32,6 +32,7 @@ const ShowsList = ({ showsData, showsTitle }) => {
   return (
     <ShowsListWrapper>
       <SectionTitle title={showsTitle} />
+
       <Container>
         <div className="shows-list grid">
           {currentShows?.map((show) => (
