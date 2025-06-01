@@ -13,7 +13,7 @@ function CommonQuestions() {
         }
         rightContentType={"title-button"}
       />
-      <FAQs></FAQs>
+      <FAQs />
     </CommonQuestionsWrapper>
   );
 }

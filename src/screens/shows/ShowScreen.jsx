@@ -6,6 +6,11 @@ import { fetchAllShows } from "../../redux/slices/showsSlice";
 import { ErrorMessage } from "../../components";
 import { ShowsList } from "../../components";
 import { allShows } from "../../redux/selectors/showsSelector";
+import {
+  selectSortedHighRatedShows,
+  selectSortedNewShows,
+} from "../../redux/selectors/showsSelector";
+import ShowsSlider from "../../components/common/shows/ShowsSlider/ShowsSlider";
 
 const ShowScreen = () => {
   const dispatch = useDispatch();
@@ -18,9 +23,11 @@ const ShowScreen = () => {
   const isLoading = useSelector((state) => state.shows.isLoading.fetchAllShows);
   const isError = useSelector((state) => state.shows.isError.fetchAllShows);
   const error = useSelector((state) => state.shows.error);
+  const highRatedShowsData = useSelector(selectSortedHighRatedShows);
+  const latestPremieredShowsData = useSelector(selectSortedNewShows);
 
   const allShowData = useSelector(allShows);
-  // console.log(allShowData);
+  // console.log(latestPremieredShowsData);
 
   if (isLoading) {
     return (
@@ -42,6 +49,12 @@ const ShowScreen = () => {
 
   return (
     <div>
+      {highRatedShowsData?.length > 0 && (
+        <ShowsSlider
+          showsData={highRatedShowsData}
+          showsTitle={"High Rated Shows"}
+        />
+      )}
       {allShowData?.length > 0 && (
         <ShowsList showsData={allShowData} showsTitle={"All Shows"} />
       )}

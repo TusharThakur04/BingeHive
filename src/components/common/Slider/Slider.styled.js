@@ -35,7 +35,7 @@ export const SliderWrapper = styled.div`
   .slick-dots {
     li {
       button::before {
-        color: red;
+        color: ${theme.colors.primary};
       }
     }
   }

@@ -7,8 +7,8 @@ function FAQs() {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <FAQsWrapper>
-      {FAQS.map((FAQ, index) => {
-        return (
+      <div className="grid faqItems">
+        {FAQS.map((FAQ, index) => (
           <FAQsItems
             key={index}
             data={FAQ}
@@ -19,8 +19,8 @@ function FAQs() {
                 : setActiveIndex(index + 1);
             }}
           />
-        );
-      })}
+        ))}
+      </div>
     </FAQsWrapper>
   );
 }

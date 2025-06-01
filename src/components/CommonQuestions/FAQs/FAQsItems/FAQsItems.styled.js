@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme, media } from "../../../../styles/theme/theme";
 
 export const FAQsItemsWrapper = styled.div`
-  width: 700px;
+  width: 500px;
   margin: 5px 0;
 
   ${media.lg`
