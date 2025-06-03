@@ -18,7 +18,7 @@ const ShowScreen = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(fetchAllShows());
-  }, [dispatch]);
+  }, []);
 
   const isLoading = useSelector((state) => state.shows.isLoading.fetchAllShows);
   const isError = useSelector((state) => state.shows.isError.fetchAllShows);

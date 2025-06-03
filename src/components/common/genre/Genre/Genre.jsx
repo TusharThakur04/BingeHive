@@ -14,8 +14,8 @@ function Genre() {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 900000,
-    speed: 400,
+    autoplaySpeed: 2500,
+    speed: 800,
     slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [

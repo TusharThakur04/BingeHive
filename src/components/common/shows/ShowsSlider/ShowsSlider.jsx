@@ -17,33 +17,33 @@ const ShowsSlider = ({ showsData, showsTitle }) => {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 900000,
-    speed: 400,
+    autoplaySpeed: 2500,
+    speed: 800,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1440,
         settings: {
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 992,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 992,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 576,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
     ],
