@@ -23,11 +23,12 @@ const ShowScreen = () => {
   const isLoading = useSelector((state) => state.shows.isLoading.fetchAllShows);
   const isError = useSelector((state) => state.shows.isError.fetchAllShows);
   const error = useSelector((state) => state.shows.error);
+
+  const allShowData = useSelector(allShows);
   const highRatedShowsData = useSelector(selectSortedHighRatedShows);
   const latestPremieredShowsData = useSelector(selectSortedNewShows);
 
-  const allShowData = useSelector(allShows);
-  // console.log(latestPremieredShowsData);
+  // console.log(allShowData);
 
   if (isLoading) {
     return (
@@ -49,12 +50,23 @@ const ShowScreen = () => {
 
   return (
     <div>
-      {highRatedShowsData?.length > 0 && (
-        <ShowsSlider
-          showsData={highRatedShowsData}
-          showsTitle={"High Rated Shows"}
-        />
-      )}
+      <div style={{ margin: "90px 0 50px 0" }}>
+        {latestPremieredShowsData?.length > 0 && (
+          <ShowsSlider
+            showsData={latestPremieredShowsData}
+            showsTitle={"Latest Release"}
+          />
+        )}
+      </div>
+      <div>
+        {highRatedShowsData?.length > 0 && (
+          <ShowsSlider
+            showsData={highRatedShowsData}
+            showsTitle={"All Time Popular"}
+          />
+        )}
+      </div>
+
       {allShowData?.length > 0 && (
         <ShowsList showsData={allShowData} showsTitle={"All Shows"} />
       )}

@@ -11,7 +11,8 @@ import { SliderWrapper } from "../../Slider/Slider.styled";
 
 const ShowsSlider = ({ showsData, showsTitle }) => {
   const showsInSlider = showsData.slice(0, 15);
-  console.log(showsInSlider);
+
+  // console.log(showsInSlider);
 
   const settings = {
     dots: true,
