@@ -11,6 +11,7 @@ import {
   selectSortedNewShows,
 } from "../../redux/selectors/showsSelector";
 import ShowsSlider from "../../components/common/shows/ShowsSlider/ShowsSlider";
+import ShowsBanner from "../../components/common/shows/ShowsBanner/ShowsBanner";
 
 const ShowScreen = () => {
   const dispatch = useDispatch();
@@ -50,7 +51,8 @@ const ShowScreen = () => {
 
   return (
     <div>
-      <div style={{ margin: "90px 0 50px 0" }}>
+      <ShowsBanner showsData={highRatedShowsData} />
+      <div style={{}}>
         {latestPremieredShowsData?.length > 0 && (
           <ShowsSlider
             showsData={latestPremieredShowsData}
