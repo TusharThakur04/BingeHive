@@ -19,7 +19,7 @@ const ShowScreen = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(fetchAllShows());
-  }, []);
+  }, [dispatch]);
 
   const isLoading = useSelector((state) => state.shows.isLoading.fetchAllShows);
   const isError = useSelector((state) => state.shows.isError.fetchAllShows);
@@ -52,22 +52,20 @@ const ShowScreen = () => {
   return (
     <div>
       <ShowsBanner showsData={highRatedShowsData} />
-      <div style={{}}>
-        {latestPremieredShowsData?.length > 0 && (
-          <ShowsSlider
-            showsData={latestPremieredShowsData}
-            showsTitle={"Latest Release"}
-          />
-        )}
-      </div>
-      <div>
-        {highRatedShowsData?.length > 0 && (
-          <ShowsSlider
-            showsData={highRatedShowsData}
-            showsTitle={"All Time Popular"}
-          />
-        )}
-      </div>
+
+      {latestPremieredShowsData?.length > 0 && (
+        <ShowsSlider
+          showsData={latestPremieredShowsData}
+          showsTitle={"Latest Release"}
+        />
+      )}
+
+      {highRatedShowsData?.length > 0 && (
+        <ShowsSlider
+          showsData={highRatedShowsData}
+          showsTitle={"All Time Popular"}
+        />
+      )}
 
       {allShowData?.length > 0 && (
         <ShowsList showsData={allShowData} showsTitle={"All Shows"} />

@@ -45,6 +45,8 @@ const ShowsSlider = ({ showsData, showsTitle }) => {
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
         },
       },
     ],
