@@ -46,21 +46,19 @@ const SearchBar = () => {
     <SearchBarWrapper>
       <div className="searchbar-top ">
         <form className="search flex " onSubmit={handleQuerySubmit}>
-          <div className="search-box flex justify-center">
-            <input
-              type="text"
-              placeholder={
-                searchError ? searchError : "Search for TV shows ..."
-              }
-              className="text-lg font-semibold"
-              onChange={handleQueryChange}
-              ref={inputRef}
-            />
-
-            <button type="submit" className="search-icon bg-transparent">
+          <div className="search-box flex">
+            <div className="search-input">
+              <input
+                type="text"
+                placeholder="Search for TV shows ..."
+                className="text-lg font-semibold"
+                onChange={handleQueryChange}
+                ref={inputRef}
+              />
+            </div>
+            <button type="submit" className="search-icon ">
               <img src={Icons.Search} alt="" />
             </button>
-            <span className="search-error-text">{searchError}</span>
           </div>
         </form>
       </div>
