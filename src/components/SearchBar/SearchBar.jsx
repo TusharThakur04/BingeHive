@@ -3,7 +3,7 @@ import { SearchBarWrapper } from "./SearchBar.styles";
 const SearchBar = () => {
   return (
     <SearchBarWrapper>
-      <div>
+      <div className="banner-img">
         <div></div>
       </div>
     </SearchBarWrapper>
