@@ -58,7 +58,7 @@ const SearchBar = () => {
           onSubmit={handleQuerySubmit}
         >
           <div className="search-box flex">
-            <div className="search-input">
+            <div className="search-input flex justify-center items-center">
               <input
                 type="text"
                 placeholder="Search for TV shows ..."

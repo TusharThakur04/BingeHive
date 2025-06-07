@@ -49,8 +49,13 @@ export const SearchBarWrapper = styled.div`
   outline: none;
   background-color: transparent;
   font-size: 1rem;
-  padding: 0.5rem;
   width: 250px;
+      ${media.sm`
+
+      height:25px;
+  `}
+
+
 
   &:focus{
     border-bottom: 2px solid ${theme.colors.primary}; 
