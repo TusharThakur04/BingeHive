@@ -3,6 +3,7 @@ import { Images } from "../../assets/images";
 import { SearchBarWrapper } from "./SearchBar.styles";
 import { Icons } from "../../assets/icons";
 import { useDispatch, useSelector } from "react-redux";
+
 // import {
 //   fetchSearchResults,
 //   resetSearchResults,
@@ -26,18 +27,19 @@ const SearchBar = () => {
 
   const handleQuerySubmit = async (event) => {
     event.preventDefault();
-    if (isValidSearchQuery(query)) {
-      // dispatch(resetSearchResults());
-      setHasValidQuery(true);
-      setSearchError("");
-      // dispatch(fetchSearchResults(query));
-    } else if (query.trim().length === 0) {
-      // setSearchError("Please enter shows name.");
-      setHasValidQuery(false);
-    } else {
-      setSearchError("Please enter valid show title or name.");
-      setHasValidQuery(false);
-    }
+    // if (isValidSearchQuery(query)) {
+    //   // - dispatch(resetSearchResults());
+    //   setHasValidQuery(true);
+    //   setSearchError("");
+    //   // - dispatch(fetchSearchResults(query));
+    // } else {
+    setSearchError("Please enter valid show title or name.");
+    setTimeout(() => {
+      setSearchError(false);
+    }, 3000);
+
+    setHasValidQuery(false);
+    // }
   };
 
   const handleQueryChange = (event) => setQuery(event.target.value);
@@ -45,7 +47,11 @@ const SearchBar = () => {
   return (
     <SearchBarWrapper>
       <div className="searchbar-top ">
-        <form className="search flex " onSubmit={handleQuerySubmit}>
+        {searchError && <div className="error">{searchError}</div>}
+        <form
+          className="search flex justify-center items-center"
+          onSubmit={handleQuerySubmit}
+        >
           <div className="search-box flex">
             <div className="search-input">
               <input

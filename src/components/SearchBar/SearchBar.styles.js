@@ -24,6 +24,13 @@ export const SearchBarWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  height:200px;
+  ${media.lg`
+    height: 150px;
+  `}
+  ${media.sm`
+    height: 100px;
+  `}
 }
 
 .search-box {
@@ -34,6 +41,7 @@ export const SearchBarWrapper = styled.div`
   border-radius: 25px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   gap: 0.5rem;
+  height:30%
 }
 
 .search-input input {
@@ -45,14 +53,36 @@ export const SearchBarWrapper = styled.div`
   width: 250px;
 }
 
-/* NEW: Style the button, not just the image */
 .search-icon {
   width: 48px;
   height: 48px;
+    ${media.sm`
+      width: 40px;
+      height: 40px;
+  `}
   background-color: transparent;
   border: none;
   border-radius: 6px;
   display: flex;
   align
+    }
+
+.error {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffe6e6;         /* light red background */
+  color: #b30000;                    /* dark red text */
+  border: 1px solid #ff4d4d;         /* softer red border */
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  font-weight: 500;
+  z-index: 100;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
 
 `;
