@@ -29,8 +29,9 @@ const handleError = (error, thunkAPI) => {
   });
 };
 
+// fetch all shows
 export const fetchAllShows = createAsyncThunk(
-  "fetch/all/shows",
+  "fetch/shows/all",
   async (_, thunkAPI) => {
     try {
       return await showsService.fetchAllShows();
@@ -40,16 +41,32 @@ export const fetchAllShows = createAsyncThunk(
   }
 );
 
+// fetch searched show
+export const fetchShow = createAsyncThunk(
+  "fetch/shows/searched",
+  async (query, thunkAPI) => {
+    try {
+      return await showsService.fetchShow(query);
+    } catch (error) {
+      return handleError(error, thunkAPI);
+    }
+  }
+);
+
 const initialState = {
   shows: [],
+  searchResult: [],
   isLoading: {
     fetchAllShows: false,
+    fetchShow: false,
   },
   isSuccess: {
     fetchAllShows: false,
+    fetchShow: false,
   },
   isError: {
     fetchAllShows: false,
+    fetchShow: false,
   },
   error: null,
 };
@@ -66,16 +83,33 @@ const showsSlice = createSlice({
         state.isSuccess.fetchAllShows = false;
       })
       .addCase(fetchAllShows.rejected, (state, action) => {
+        state.error = action.payload;
         state.isError.fetchAllShows = true;
         state.isLoading.fetchAllShows = false;
         state.isSuccess.fetchAllShows = false;
-        state.error = action.payload;
       })
       .addCase(fetchAllShows.fulfilled, (state, { payload }) => {
         state.isError.fetchAllShows = false;
         state.isLoading.fetchAllShows = false;
         state.isSuccess.fetchAllShows = true;
         state.shows = payload;
+      })
+      .addCase(fetchShow.pending, (state) => {
+        state.isError.fetchShow = false;
+        state.isLoading.fetchShow = true;
+        state.isSuccess.fetchShow = false;
+      })
+      .addCase(fetchShow.rejected, (state, action) => {
+        state.isError.fetchShow = true;
+        state.isLoading.fetchShow = false;
+        state.isSuccess.fetchShow = false;
+        state.error = action.payload;
+      })
+      .addCase(fetchShow.fulfilled, (state, { payload }) => {
+        state.searchResult = payload;
+        state.isError.fetchShow = false;
+        state.isLoading.fetchShow = false;
+        state.isSuccess.fetchShow = true;
       });
   },
 });

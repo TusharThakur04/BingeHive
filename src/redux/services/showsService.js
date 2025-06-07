@@ -7,8 +7,15 @@ const fetchAllShows = async () => {
   return res.data;
 };
 
+const fetchShow = async (query) => {
+  const showUrl = urlConstants.searchShowsUrl + `${query}`;
+  const res = await axios.get(showUrl);
+  return res.data;
+};
+
 const showsService = {
   fetchAllShows,
+  fetchShow,
 };
 
 export default showsService;

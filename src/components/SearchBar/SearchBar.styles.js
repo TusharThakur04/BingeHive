@@ -50,10 +50,10 @@ export const SearchBarWrapper = styled.div`
   background-color: transparent;
   font-size: 1rem;
   width: 250px;
-      ${media.sm`
+  //     ${media.sm`
 
-      height:25px;
-  `}
+  //     height:25px;
+  // `}
 
 
 
