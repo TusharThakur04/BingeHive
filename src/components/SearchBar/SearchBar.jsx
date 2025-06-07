@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Images } from "../../assets/images";
 import { SearchBarWrapper } from "./SearchBar.styles";
 import { Icons } from "../../assets/icons";
@@ -18,7 +18,12 @@ const SearchBar = () => {
   const [hasValidQuery, setHasValidQuery] = useState(false);
   const dispatch = useDispatch();
   const inputRef = useRef("");
+
   // const searchResultsData = useSelector(selectSearchResults);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   const isValidSearchQuery = (query) => {
     const regex = /^[\w\s\-',.?!&]+$/i;
@@ -27,19 +32,19 @@ const SearchBar = () => {
 
   const handleQuerySubmit = async (event) => {
     event.preventDefault();
-    // if (isValidSearchQuery(query)) {
-    //   // - dispatch(resetSearchResults());
-    //   setHasValidQuery(true);
-    //   setSearchError("");
-    //   // - dispatch(fetchSearchResults(query));
-    // } else {
-    setSearchError("Please enter valid show title or name.");
-    setTimeout(() => {
+    if (isValidSearchQuery(query)) {
+      // - dispatch(resetSearchResults());
+      setHasValidQuery(true);
       setSearchError(false);
-    }, 3000);
+      // - dispatch(fetchSearchResults(query));
+    } else {
+      setSearchError("Please enter valid show title or name.");
+      setTimeout(() => {
+        setSearchError(false);
+      }, 3000);
 
-    setHasValidQuery(false);
-    // }
+      setHasValidQuery(false);
+    }
   };
 
   const handleQueryChange = (event) => setQuery(event.target.value);

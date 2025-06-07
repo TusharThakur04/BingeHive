@@ -51,6 +51,11 @@ export const SearchBarWrapper = styled.div`
   font-size: 1rem;
   padding: 0.5rem;
   width: 250px;
+
+  &:focus{
+    border-bottom: 2px solid ${theme.colors.primary}; 
+  // box-shadow: 0 2px 0 0 ${theme.colors.primary};
+  }
 }
 
 .search-icon {
