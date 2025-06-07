@@ -74,7 +74,9 @@ const initialState = {
 const showsSlice = createSlice({
   name: "shows",
   initialState,
-  reducers: {},
+  reducers: {
+    resetFetchData: (state) => (state.searchResult = []),
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchAllShows.pending, (state) => {
@@ -114,4 +116,5 @@ const showsSlice = createSlice({
   },
 });
 
+export const { resetFetchData } = showsSlice.actions;
 export default showsSlice.reducer;

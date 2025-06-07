@@ -7,4 +7,5 @@ export { default as GenreItem } from "./common/genre/GenreItem/GenreItem";
 export { default as CommonQuestions } from "./CommonQuestions/CommonQuestions";
 export { default as ErrorMessage } from "./common/ErrorMessage/ErrorMessage";
 export { default as ShowsList } from "./common/shows/ShowsList/ShowsList";
-export { default as SearchBar } from "./SearchBar/SearchBar";
+export { default as SearchBar } from "./searchBar/SearchBar";
+export { default as SearchList } from "./searchList/SearchList";

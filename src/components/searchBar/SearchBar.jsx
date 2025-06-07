@@ -3,14 +3,8 @@ import { Images } from "../../assets/images";
 import { SearchBarWrapper } from "./SearchBar.styles";
 import { Icons } from "../../assets/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchShow } from "../../redux/slices/showsSlice";
+import { fetchShow, resetFetchData } from "../../redux/slices/showsSlice";
 import { searchedShow } from "../../redux/selectors/showsSelector";
-
-// import {
-//   fetchSearchResults,
-//   resetSearchResults,
-// } from "../../../redux/slices/showsSlice";
-// import { selectSearchResults } from "../../../redux/selectors/showsSelectors";
 // import SearchList from "../SearchList/SearchList";
 // import NotDataFound from "../../common/NotDataFound/NotDataFound";
 
@@ -37,10 +31,10 @@ const SearchBar = () => {
   const handleQuerySubmit = async (event) => {
     event.preventDefault();
     if (isValidSearchQuery(query)) {
-      // - dispatch(resetSearchResults());
+      dispatch(resetFetchData());
       setHasValidQuery(true);
       setSearchError(false);
-      await dispatch(fetchShow(query));
+      dispatch(fetchShow(query));
     } else {
       setSearchError("Please enter valid show title or name.");
       setTimeout(() => {
@@ -78,12 +72,12 @@ const SearchBar = () => {
         </form>
       </div>
       <div className="searchbar-bottom">
-        {/* {hasValidQuery &&
-          (searchResultsData && searchResultsData.length > 0 ? (
+        {hasValidQuery &&
+          (showData && showData.length > 0 ? (
             <SearchList searchResultsData={searchResultsData} />
           ) : (
             <NotDataFound />
-          ))} */}
+          ))}
       </div>
     </SearchBarWrapper>
   );
