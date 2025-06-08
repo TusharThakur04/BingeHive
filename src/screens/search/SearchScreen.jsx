@@ -6,7 +6,8 @@ const SearchScreen = () => {
   const isError = useSelector((state) => state.shows.isError.fetchShow);
   const error = useSelector((state) => state.shows.error);
   const isLoading = useSelector((state) => state.shows.isLoading.fetchShow);
-  console.log(isError);
+
+  // console.log(isError);
 
   if (isLoading) {
     return (

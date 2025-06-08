@@ -12,7 +12,9 @@ import { Icons } from "../../../../assets/icons";
 
 const ShowsBanner = ({ showsData }) => {
   const randomShow = showsData.slice(0, 15)[Math.floor(Math.random() * 15)];
-  console.log(randomShow);
+
+  // console.log(randomShow);
+
   return (
     <ShowsBannerWrapper className="top-spacing-fix">
       <Container>

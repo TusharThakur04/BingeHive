@@ -5,12 +5,11 @@ import { theme } from "../../styles/theme/theme";
 export const SearchBarWrapper = styled.div`
 .searchbar-top {
   position: relative;
-  height: 50vh;
   background: url(${Images.HomeBanner}) center/cover;
-  min-height: 68vh;
+  min-height: 50vh;
 
   ${media.sm`
-    min-height: 50vh;
+    min-height: 45vh;
   `}
 
   overflow: hidden;

@@ -10,11 +10,12 @@ import { NotDataFound } from "..";
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [searchError, setSearchError] = useState(false);
-  const [hasValidQuery, setHasValidQuery] = useState(false);
+  // const [hasValidQuery, setHasValidQuery] = useState(false);
   const dispatch = useDispatch();
-  const inputRef = useRef("");
+  const inputRef = useRef(null);
   const showData = useSelector(searchedShow);
-  console.log(showData);
+
+  // console.log(showData[1].show.name);
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -29,7 +30,7 @@ const SearchBar = () => {
     event.preventDefault();
     if (isValidSearchQuery(query)) {
       dispatch(resetFetchData());
-      setHasValidQuery(true);
+      // setHasValidQuery(true);
       setSearchError(false);
       dispatch(fetchShow(query));
     } else {
@@ -38,7 +39,7 @@ const SearchBar = () => {
         setSearchError(false);
       }, 3000);
 
-      setHasValidQuery(false);
+      // setHasValidQuery(false);
     }
   };
 
@@ -69,12 +70,11 @@ const SearchBar = () => {
         </form>
       </div>
       <div className="searchbar-bottom">
-        {hasValidQuery &&
-          (showData && showData.length > 0 ? (
-            <SearchList showData={showData} />
-          ) : (
-            <NotDataFound />
-          ))}
+        {showData && showData.length > 0 ? (
+          <SearchList showData={showData} />
+        ) : (
+          <NotDataFound />
+        )}
       </div>
     </SearchBarWrapper>
   );

@@ -12,10 +12,6 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 const ShowsList = ({ showsData, showsTitle }) => {
   const [currentPage, setcurrentPage] = useState(1);
 
-  useEffect(() => {
-    window.scroll(0, 0);
-  }, [currentPage]);
-
   const showsPerPage = 36;
   const lastIndex = currentPage * showsPerPage;
   const firstIndex = lastIndex - showsPerPage;
