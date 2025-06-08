@@ -1,8 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ErrorMessage, SearchBar } from "../../components";
 import { ClipLoader } from "react-spinners";
+import { useEffect } from "react";
+import { resetFetchData } from "../../redux/slices/showsSlice";
 
 const SearchScreen = () => {
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(resetFetchData()), [isError];
+  // });
   const isError = useSelector((state) => state.shows.isError.fetchShow);
   const error = useSelector((state) => state.shows.error);
   const isLoading = useSelector((state) => state.shows.isLoading.fetchShow);
@@ -23,6 +29,7 @@ const SearchScreen = () => {
       </div>
     );
   }
+
   // if (isError) {
   //   return <ErrorMessage error={error} />;
   // }

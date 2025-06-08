@@ -60,7 +60,7 @@ export const fetchShowDetails = createAsyncThunk(
   async (showid, thunkAPI) => {
     try {
       thunkAPI.dispatch(showsSlice.actions.resetSingleShowData);
-      return await showsService.fetchShow(showid);
+      return await showsService.fetchShowDetail(showid);
     } catch (error) {
       return handleError(error, thunkAPI);
     }
@@ -95,6 +95,7 @@ const showsSlice = createSlice({
   reducers: {
     resetFetchData: (state) => {
       state.searchResult = [];
+      // state.isError.fetchShow = false;
     },
 
     resetSingleShowData: (state) => {

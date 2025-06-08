@@ -20,3 +20,5 @@ export const selectSortedHighRatedShows = sortShowsByType(HIGH_RATED_SHOWS);
 export const selectSortedNewShows = sortShowsByType(NEW_SHOWS);
 
 export const searchedShow = (state) => state.shows.searchResult || [];
+
+export const singleShow = (state) => state.shows.showDetail || null;
