@@ -11,7 +11,12 @@ import { MdLanguage } from "react-icons/md";
 import { Icons } from "../../../../assets/icons";
 
 const ShowsBanner = ({ showsData }) => {
-  const randomShow = showsData.slice(0, 15)[Math.floor(Math.random() * 15)];
+  let show = null;
+  if (showsData.length > 1) {
+    show = showsData.slice(0, 15)[Math.floor(Math.random() * 15)];
+  } else {
+    show = showsData;
+  }
 
   // console.log(randomShow);
 
@@ -21,22 +26,20 @@ const ShowsBanner = ({ showsData }) => {
         <div
           className="banner flex justify-center items-end"
           style={{
-            background: `linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0.00) 100%), url(${randomShow?.image?.original}) top/cover no-repeat fixed`,
+            background: `linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0.00) 100%), url(${show?.image?.original}) top/cover no-repeat fixed`,
           }}
         >
           <div className="banner-content text-center">
-            <HeadingTitle className="banner-title">
-              {randomShow?.name}
-            </HeadingTitle>
+            <HeadingTitle className="banner-title">{show?.name}</HeadingTitle>
             <div
               className="summary-text"
               dangerouslySetInnerHTML={{
-                __html: randomShow?.summary?.substring(0, 240) + " ...",
+                __html: show?.summary?.substring(0, 240) + " ...",
               }}
             ></div>
             <div className="banner-info flex flex-col items-center">
               <BaseLinkPrimary
-                to={randomShow?.officialSite}
+                to={show?.officialSite}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -49,7 +52,7 @@ const ShowsBanner = ({ showsData }) => {
                 <Paragraph>
                   <span className="font-bold text-white">Genre:</span>
                   <span className="font-semibold">
-                    {randomShow?.genres?.join(", ")}
+                    {show?.genres?.join(", ")}
                   </span>
                 </Paragraph>
                 <ul className="info-list flex items-center justify-center flex-wrap">
@@ -57,16 +60,14 @@ const ShowsBanner = ({ showsData }) => {
                     <span className="info-item-icon inline-flex items-center justify-center">
                       <MdLanguage size={20} />
                     </span>
-                    <span className="info-item-value">
-                      {randomShow?.language}
-                    </span>
+                    <span className="info-item-value">{show?.language}</span>
                   </li>
                   <li className="inline-flex items-center info-item">
                     <span className="info-item-icon inline-flex items-center justify-center">
                       <img src={Icons.Star} alt="" />
                     </span>
                     <span className="info-item-value">
-                      {randomShow?.rating?.average}
+                      {show?.rating?.average}
                     </span>
                   </li>
                 </ul>
