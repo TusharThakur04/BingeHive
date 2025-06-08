@@ -75,7 +75,9 @@ const showsSlice = createSlice({
   name: "shows",
   initialState,
   reducers: {
-    resetFetchData: (state) => (state.searchResult = []),
+    resetFetchData: (state) => {
+      state.searchResult = [];
+    },
   },
   extraReducers(builder) {
     builder

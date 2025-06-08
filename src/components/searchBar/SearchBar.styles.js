@@ -24,7 +24,7 @@ export const SearchBarWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  height:200px;
+  height:170px;
   ${media.lg`
     height: 150px;
   `}
