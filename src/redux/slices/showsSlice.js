@@ -43,7 +43,7 @@ export const fetchAllShows = createAsyncThunk(
 
 // fetch searched show
 export const fetchShow = createAsyncThunk(
-  "fetch/shows/searched",
+  "fetch/shows/search",
   async (query, thunkAPI) => {
     try {
       return await showsService.fetchShow(query);
@@ -53,20 +53,38 @@ export const fetchShow = createAsyncThunk(
   }
 );
 
+//fetch show details
+
+export const fetchShowDetails = createAsyncThunk(
+  "fetch/shows/single",
+  async (showid, thunkAPI) => {
+    try {
+      thunkAPI.dispatch(showsSlice.actions.resetSingleShowData);
+      return await showsService.fetchShow(showid);
+    } catch (error) {
+      return handleError(error, thunkAPI);
+    }
+  }
+);
+
 const initialState = {
   shows: [],
   searchResult: [],
+  showDetail: null,
   isLoading: {
     fetchAllShows: false,
     fetchShow: false,
+    fetchShowDetails: false,
   },
   isSuccess: {
     fetchAllShows: false,
     fetchShow: false,
+    fetchShowDetails: false,
   },
   isError: {
     fetchAllShows: false,
     fetchShow: false,
+    fetchShowDetails: false,
   },
   error: null,
 };
@@ -77,6 +95,10 @@ const showsSlice = createSlice({
   reducers: {
     resetFetchData: (state) => {
       state.searchResult = [];
+    },
+
+    resetSingleShowData: (state) => {
+      state.showDetail = null;
     },
   },
   extraReducers(builder) {
@@ -114,6 +136,23 @@ const showsSlice = createSlice({
         state.isError.fetchShow = false;
         state.isLoading.fetchShow = false;
         state.isSuccess.fetchShow = true;
+      })
+      .addCase(fetchShowDetails.pending, (state) => {
+        state.isError.fetchShowDetails = false;
+        state.isLoading.fetchShowDetails = true;
+        state.isSuccess.fetchShowDetails = false;
+      })
+      .addCase(fetchShowDetails.rejected, (state, action) => {
+        state.error = action.payload;
+        state.isError.fetchShowDetails = true;
+        state.isLoading.fetchShowDetails = false;
+        state.isSuccess.fetchShowDetails = false;
+      })
+      .addCase(fetchShowDetails.fulfilled, (state, { payload }) => {
+        state.isError.fetchShowDetails = false;
+        state.isLoading.fetchShowDetails = false;
+        state.isSuccess.fetchShowDetails = true;
+        state.showDetail = payload;
       });
   },
 });

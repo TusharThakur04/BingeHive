@@ -13,9 +13,19 @@ const fetchShow = async (query) => {
   return res.data;
 };
 
+const fetchShowDetail = async (showid) => {
+  const showUrl =
+    urlConstants.fetchShowsUrl +
+    `/${showid}` +
+    urlConstants.seasonsCastEpisodesEmbed;
+  const res = await axios.get(showUrl);
+  return res.data;
+};
+
 const showsService = {
   fetchAllShows,
   fetchShow,
+  fetchShowDetail,
 };
 
 export default showsService;

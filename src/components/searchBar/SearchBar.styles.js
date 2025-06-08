@@ -49,7 +49,7 @@ export const SearchBarWrapper = styled.div`
   background-color: transparent;
   font-size: 1rem;
   width: 250px;
-  //     ${media.sm`
+      // ${media.sm`
 
   //     height:25px;
   // `}
@@ -58,7 +58,6 @@ export const SearchBarWrapper = styled.div`
 
   &:focus{
     border-bottom: 2px solid ${theme.colors.primary}; 
-  // box-shadow: 0 2px 0 0 ${theme.colors.primary};
   }
 }
 
@@ -81,9 +80,9 @@ export const SearchBarWrapper = styled.div`
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffe6e6;         /* light red background */
-  color: #b30000;                    /* dark red text */
-  border: 1px solid #ff4d4d;         /* softer red border */
+  background-color: #ffe6e6;         
+  color: #b30000;                   
+  border: 1px solid #ff4d4d;  
   padding: 12px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
