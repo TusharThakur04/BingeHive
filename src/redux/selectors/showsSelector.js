@@ -22,3 +22,40 @@ export const selectSortedNewShows = sortShowsByType(NEW_SHOWS);
 export const searchedShow = (state) => state.shows.searchResult || [];
 
 export const singleShow = (state) => state.shows.showDetail || null;
+
+export const metaData = createSelector([singleShow], (detail) => {
+  if (!detail) return null;
+  return {
+    name: detail.name,
+    officialSite: detail.officialSite,
+    premiered: detail.premiered,
+    ended: detail.ended,
+    genres: detail.genres,
+    image: detail.image,
+    rating: detail.rating,
+    runtime: detail.runtime,
+    status: detail.status,
+    language: detail.language,
+    url: detail.url,
+  };
+});
+
+// export const selectShowDescription = createSelector(
+//   [singleShow],
+//   (detail) => detail?.summary
+);
+
+export const selectShowsSeasons = createSelector(
+  [singleShow],
+  (detail) => detail?._embedded?.seasons
+);
+
+export const selectShowCast = createSelector(
+  [singleShow],
+  (detail) => detail?._embedded?.cast
+);
+
+export const selectShowEpisodes = createSelector(
+  [singleShow],
+  (detail) => detail?._embedded?.episodes
+);

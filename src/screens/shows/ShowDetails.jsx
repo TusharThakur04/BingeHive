@@ -1,31 +1,35 @@
 import { useDispatch, useSelector } from "react-redux";
-import { singleShow } from "../../redux/selectors/showsSelector";
+import { metaData, singleShow } from "../../redux/selectors/showsSelector";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchShowDetails } from "../../redux/slices/showsSlice";
 import ShowsBanner from "../../components/common/shows/ShowsBanner/ShowsBanner";
 import { ClipLoader } from "react-spinners";
 import { ErrorMessage } from "../../components";
-import { Container } from "postcss";
+import { Container } from "../../styles/global/default";
 import { ShowDetailContent } from "./ShowDetailScreen.styles";
+import ShowsMainData from "../../components/shows/showsMainData/ShowsMainData";
+import SeasonList from "../../components/shows/seasonList/SeasonList";
 
 const ShowDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const showid = parseInt(id, 10);
   // console.log(id, showid);
-  const showDetails = useSelector(singleShow);
+
   useEffect(() => window.scroll(0, 0));
   useEffect(() => {
     dispatch(fetchShowDetails(showid));
   }, [dispatch, showid]);
-  console.log(showDetails);
 
+  const showDetails = useSelector(singleShow);
   const isError = useSelector((state) => state.shows.isError.fetchShowDetails);
   const isLoading = useSelector(
     (state) => state.shows.isLoading.fetchShowDetails
   );
   const error = useSelector((state) => state.shows.isLoading.fetchShowDetails);
+  const details = useSelector(metaData);
+  console.log(details);
   if (isLoading) {
     return (
       <div
@@ -48,7 +52,10 @@ const ShowDetails = () => {
       {showDetails && <ShowsBanner showsData={showDetails} />}
 
       <Container>
-        <ShowDetailContent></ShowDetailContent>
+        <ShowDetailContent>
+          <ShowsMainData />
+          <SeasonList />
+        </ShowDetailContent>
       </Container>
     </div>
   );

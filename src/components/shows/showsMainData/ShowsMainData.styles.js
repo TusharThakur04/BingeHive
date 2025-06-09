@@ -1,2 +1,13 @@
 import styled from "styled-components";
-export const MainDataWrapper = styled.div``;
+import { media } from "../../../styles/theme/theme";
+export const MainDataWrapper = styled.div`
+  width: 70%;
+
+  ${media.xl`
+        width: 100%;
+    `}
+
+  .detail-block-title {
+    margin-bottom: 16px;
+  }
+`;

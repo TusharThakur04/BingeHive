@@ -59,7 +59,7 @@ export const fetchShowDetails = createAsyncThunk(
   "fetch/shows/single",
   async (showid, thunkAPI) => {
     try {
-      thunkAPI.dispatch(showsSlice.actions.resetSingleShowData);
+      thunkAPI.dispatch(showsSlice.actions.resetSingleShowData());
       return await showsService.fetchShowDetail(showid);
     } catch (error) {
       return handleError(error, thunkAPI);
