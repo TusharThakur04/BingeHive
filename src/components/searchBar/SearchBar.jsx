@@ -27,9 +27,9 @@ const SearchBar = () => {
   };
 
   const handleQuerySubmit = async (event) => {
+    dispatch(resetFetchData());
     event.preventDefault();
     if (isValidSearchQuery(query)) {
-      dispatch(resetFetchData());
       // setHasValidQuery(true);
       setSearchError(false);
       dispatch(fetchShow(query));
