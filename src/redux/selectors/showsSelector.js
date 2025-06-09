@@ -40,9 +40,9 @@ export const metaData = createSelector([singleShow], (detail) => {
   };
 });
 
-// export const selectShowDescription = createSelector(
-//   [singleShow],
-//   (detail) => detail?.summary
+export const selectShowDescription = createSelector(
+  [singleShow],
+  (detail) => detail?.summary
 );
 
 export const selectShowsSeasons = createSelector(
