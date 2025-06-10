@@ -1,15 +1,15 @@
-import { useSelector } from "react-redux";
-import { Icons } from "../../../assets/icons";
 import { HeadingTitleMd, Text } from "../../../styles/global/default";
 import { SeasonItemWrapper } from "./SeasonItem.styles";
 import PropTypes from "prop-types";
-import { selectShowEpisodes } from "../../../redux/selectors/showsSelector";
 import EpisodeList from "../episodeList/EpisodeList";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { useSelector } from "react-redux";
+import { selectShowEpisodes } from "../../../redux/selectors/showsSelector";
 
 const SeasonItem = ({ seasonData, onShow, isActive }) => {
   const episodesData = useSelector(selectShowEpisodes);
+  //   console.log(seasonData);
 
   return (
     <SeasonItemWrapper className="bg-black06">
@@ -30,7 +30,6 @@ const SeasonItem = ({ seasonData, onShow, isActive }) => {
         </button>
       </div>
       <div className={`season-body ${isActive ? "show" : ""}`}>
-        <div>hi</div>
         {episodesData && (
           <EpisodeList
             seasonNo={seasonData?.number}
