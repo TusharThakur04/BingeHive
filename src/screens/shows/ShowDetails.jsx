@@ -9,13 +9,11 @@ import { ErrorMessage } from "../../components";
 import { Container } from "../../styles/global/default";
 import { ShowDetailContent } from "./ShowDetailScreen.styles";
 import ShowsMainData from "../../components/shows/showsMainData/ShowsMainData";
-import SeasonList from "../../components/shows/seasonList/SeasonList";
 
 const ShowDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const showid = parseInt(id, 10);
-  // console.log(id, showid);
 
   useEffect(() => window.scroll(0, 0));
   useEffect(() => {
@@ -29,7 +27,9 @@ const ShowDetails = () => {
   );
   const error = useSelector((state) => state.shows.isLoading.fetchShowDetails);
   const details = useSelector(metaData);
-  console.log(details);
+  // console.log(details);
+  // console.log(showDetails);
+
   if (isLoading) {
     return (
       <div
@@ -54,7 +54,6 @@ const ShowDetails = () => {
       <Container>
         <ShowDetailContent>
           <ShowsMainData />
-          <SeasonList />
         </ShowDetailContent>
       </Container>
     </div>

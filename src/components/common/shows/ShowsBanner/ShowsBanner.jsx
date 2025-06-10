@@ -83,5 +83,5 @@ const ShowsBanner = ({ showsData }) => {
 export default ShowsBanner;
 
 ShowsBanner.propTypes = {
-  showsData: PropTypes.array,
+  showsData: PropTypes.object,
 };
